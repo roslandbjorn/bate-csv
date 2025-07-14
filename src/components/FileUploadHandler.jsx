@@ -2,7 +2,7 @@ import {  useState } from 'react';
 import convertToCsv from '../utils/CsvConverter';
 import downloadFile from '../utils/DownloadUtil';
 
-const FileUpload = () => {
+const FileUploadHandler = () => {
     const [file, setFile] = useState(null);
 
     const handleFileChange = (e) => {
@@ -32,4 +32,4 @@ const FileUpload = () => {
     );
 }
 
-export default FileUpload;
+export default FileUploadHandler;

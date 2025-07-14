@@ -1,12 +1,11 @@
 import './App.css';
-import FileUpload from './components/FileUpload';
+import FileUploadHandler from './components/FileUploadHandler';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FileUpload />
-
+        <FileUploadHandler />
       </header>
     </div>
   );

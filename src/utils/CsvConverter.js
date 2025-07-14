@@ -46,14 +46,6 @@ const headers = [
   },
 ];
 
-const fixEncoding = (text) => {
-  const bytes = new Uint8Array(text.length);
-  for (let i = 0; i < text.length; i++) {
-    bytes[i] = text.charCodeAt(i) & 0xff; // Get byte value
-  }
-  const decoder = new TextDecoder("latin1", { fatal: false });
-  return decoder.decode(bytes);
-};
 
 const fixAmount = (text) => {
   let amountNumber = parseFloat(text.replace("NOK", "").replace(/,/g, "."));
@@ -90,7 +82,6 @@ const handleLine = (line) => {
 };
 
 const convertToCsv = (text) => {
-//   text = fixEncoding(text);
   const lines = text.split("\n");
   const headerNames = headers.map((header) => header.name).join(";");
   const formattedLines = lines.map((line) => handleLine(line));
