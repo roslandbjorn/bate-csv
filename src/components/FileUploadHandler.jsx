@@ -3,7 +3,7 @@ import convertToCsv from "../utils/CsvConverter";
 import downloadFile from "../utils/DownloadUtil";
 
 const FileUploadHandler = () => {
-  const [file, setFile] = useState({ data: null, name: "file.txt" });
+  const [file, setFile] = useState({ data: null, name: "" });
 
   const handleFileChange = (e) => {
     if (e.target.files) {
@@ -27,7 +27,7 @@ const FileUploadHandler = () => {
   return (
     <div>
       <h1>Konverter til CSV</h1>
-      <input type="file" onChange={handleFileChange} />
+      <input type="file" onChange={handleFileChange} accept=".txt" />
       <button onClick={handleConvert}>Konverter</button>
     </div>
   );
