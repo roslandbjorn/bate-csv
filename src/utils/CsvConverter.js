@@ -46,7 +46,6 @@ const headers = [
   },
 ];
 
-
 const fixAmount = (text) => {
   let amountNumber = parseFloat(text.replace("NOK", "").replace(/,/g, "."));
   amountNumber = isNaN(amountNumber) ? 0 : amountNumber;

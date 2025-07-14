@@ -1,5 +1,5 @@
-import './App.css';
-import FileUploadHandler from './components/FileUploadHandler';
+import "./App.css";
+import FileUploadHandler from "./components/FileUploadHandler";
 
 function App() {
   return (
