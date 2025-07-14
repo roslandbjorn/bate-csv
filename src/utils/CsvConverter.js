@@ -71,7 +71,6 @@ const handleLine = (line) => {
     }
     const header = headers[i];
     const value = line
-      .trim()
       .substring(header.startPosition, header.endPosition)
       .trim();
 
