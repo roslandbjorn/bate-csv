@@ -15,12 +15,13 @@ const FileUploadHandler = () => {
     const handleConvert = () => {
         const reader = new FileReader();
         reader.onload = (event) => {
-            const text = event.target.result;
+            const arrayBuffer = event.target.result;
+            debugger
+            const text = new TextDecoder('iso-8859-1').decode(arrayBuffer);
             const csvData = convertToCsv(text);
-            console.log('Converted CSV Data:', csvData);
             downloadFile(csvData, "converted.csv");
         };
-        reader.readAsText(file);
+        reader.readAsArrayBuffer(file);
     };
 
     return (
