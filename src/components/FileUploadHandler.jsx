@@ -16,7 +16,6 @@ const FileUploadHandler = () => {
         const reader = new FileReader();
         reader.onload = (event) => {
             const arrayBuffer = event.target.result;
-            debugger
             const text = new TextDecoder('iso-8859-1').decode(arrayBuffer);
             const csvData = convertToCsv(text);
             downloadFile(csvData, "converted.csv");
